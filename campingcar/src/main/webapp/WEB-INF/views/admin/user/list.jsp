@@ -23,7 +23,7 @@
             window.location.href = url;         
          })   
    } 
-
+ 
 </script>
 <style>
 	.table-style{

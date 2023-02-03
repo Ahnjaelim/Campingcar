@@ -7,7 +7,7 @@ import javax.servlet.http.HttpSession;
 
 import kr.co.ccrent.dto.CarUserDTO;
 import kr.co.ccrent.dto.Criteria;
-
+ 
 public interface CarUserService {
 	String getTime();
 	public int register(CarUserDTO carUserDTO) throws Exception;

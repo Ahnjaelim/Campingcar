@@ -18,7 +18,7 @@
 <title>Insert title here</title>
 <%@ include file="../../include/plugin.jsp" %>
 <link href="${contextPath}/resources/css/admin/admin_all.css" rel="stylesheet" />
-
+ 
 <script>
 		$(document).ready(function(){
 			// 취소

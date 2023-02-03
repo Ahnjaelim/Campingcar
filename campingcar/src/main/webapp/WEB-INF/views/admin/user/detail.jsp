@@ -34,7 +34,7 @@
 	
 	<div id="wrap">
 <h1>회원정보</h1>
-   
+    
 	<table class="table">
   <thead>
     <tr>
