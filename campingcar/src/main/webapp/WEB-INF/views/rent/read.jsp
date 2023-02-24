@@ -149,7 +149,7 @@ function rentCancel(rent_id){
 	</tr>
 </tbody>
 </c:if>
-
+</table>
 <!-- ================================================== -->		
 		</div> <!-- // #body_contents end -->
 	</div><!-- // #wrap end -->
