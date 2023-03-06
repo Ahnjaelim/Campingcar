@@ -164,6 +164,7 @@ function rentCancel(rent_id){
 	</tr>
 </tbody>
 </c:if>
+</table>
 
 <script>
 const result = "${result}"
