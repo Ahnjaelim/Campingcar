@@ -53,8 +53,11 @@ public class AdminController {
 	private final NoticeService nservice;
 
 	@GetMapping(value = { "/", "" })
-	public String indexGET() {
+	public String indexGET(Model model) {
 		System.out.println("<Admin Controller> index GET");
+		model.addAttribute("bestcarlist", rentService.getBestCar());
+		model.addAttribute("dailychart", rentService.getDailyChart());
+		model.addAttribute("latestrentlist", rentService.getAll("5"));
 		return "/admin/index";
 	}
 

@@ -41,18 +41,30 @@ public class RentServiceTest {
 		dtolist.forEach(dto -> System.out.println(dto));
 		
 	}
-	@Test
+	//@Test
 	public void getMemberTest() {
 		List<RentDTO> dtolist = rentService.getMember("user00");
 		dtolist.forEach(dto -> System.out.println(dto));		
 	}
 	
-	@Test
+	//@Test
 	public void updateCancelTest() {
 		RentDTO rentDTO = RentDTO.builder()
 				.rent_id(3)
 				.rent_state(2)
 				.build();
 		rentService.modifyCancel(rentDTO);
+	}
+	
+	// @Test
+	public void getBestCarTest() {
+		List<RentDTO> dtolist = rentService.getBestCar();
+		dtolist.forEach(dto -> System.out.println(dto));		
 	}	
+	
+	@Test
+	public void getAllTest() {
+		List<RentDTO> dtolist = rentService.getAll("5");
+		dtolist.forEach(dto -> System.out.println(dto));		
+	}
 }

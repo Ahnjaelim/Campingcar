@@ -2,6 +2,7 @@ package kr.co.ccrent.mapper;
 
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import kr.co.ccrent.domain.BoardVO;
 import kr.co.ccrent.domain.RentVO;
@@ -11,6 +12,7 @@ public interface RentMapper {
 	String selectTime();
 	void insert(RentVO rentVO);
 	List<RentVO> selectAll();
+	List<RentVO> selectAll(String limit);
 	List<RentVO> selectList(PageRequestDTO pageRequestDTO);
 	List<RentVO> selectByCarId(HashMap<String, Object> varmap);
 	int selectCount(PageRequestDTO pageRequestDTO);
@@ -31,5 +33,13 @@ public interface RentMapper {
 	
 	// 예약 취소
 	void updateCancel(RentVO rentVO);
+	
+	/* ================================================================================ 통계 */
+	
+	// 최다 예약 차량 통계
+	List<RentVO> selectBestCar();
+	
+	// 일별 예약 통계
+	List<Map<Object, Object>> selectDailyChart();
 	
 }

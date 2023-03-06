@@ -36,5 +36,6 @@ public class RentDTO {
 	private String rent_memo;
 	private Timestamp rent_datetime;
 	private boolean rent_dummy;
-	private CarVO car;	
+	private CarVO car;
+	private int cnt;
 }
