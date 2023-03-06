@@ -2,6 +2,7 @@ package kr.co.ccrent.service;
 
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import kr.co.ccrent.dto.PageRequestDTO;
 import kr.co.ccrent.dto.PageResponseDTO;
@@ -11,6 +12,7 @@ public interface RentService {
 	String getTime();
 	void register(RentDTO rentDTO);
 	List<RentDTO> getAll();
+	List<RentDTO> getAll(String limit);
 	PageResponseDTO<RentDTO> getList(PageRequestDTO pageRequestDTO);
 	HashMap<String, RentDTO> getByCarId(HashMap<String,Object> varmap);
 	RentDTO getOne(int rent_id);
@@ -30,5 +32,11 @@ public interface RentService {
 	
 	// 예약 취소
 	void modifyCancel(RentDTO rentDTO);
+	
+	/* ================================================================================ 통계 */
+	
+	List<RentDTO> getBestCar();
+	
+	List<Map<Object, Object>> getDailyChart();
 	
 }

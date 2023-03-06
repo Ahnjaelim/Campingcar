@@ -36,4 +36,5 @@ public class RentVO {
 	private Timestamp rent_datetime;	
 	private boolean rent_dummy;
 	private CarVO car;
+	private int cnt;
 }

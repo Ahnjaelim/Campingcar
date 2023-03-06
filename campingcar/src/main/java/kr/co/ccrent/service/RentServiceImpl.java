@@ -5,6 +5,7 @@ import java.time.LocalDate;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 import org.modelmapper.ModelMapper;
@@ -44,6 +45,15 @@ public class RentServiceImpl implements RentService {
 				.collect(Collectors.toList());
 		return dtolist;
 	}
+
+	@Override
+	public List<RentDTO> getAll(String limit) {
+		List<RentDTO> dtolist = rentMapper.selectAll(limit).stream()
+				.map(vo -> modelMapper.map(vo, RentDTO.class))
+				.collect(Collectors.toList());
+		return dtolist;
+	}
+	
 	@Override
 	public PageResponseDTO<RentDTO> getList(PageRequestDTO pageRequestDTO) {
 		pageRequestDTO.setBo_table(pageRequestDTO.getBo_table());
@@ -200,5 +210,21 @@ public class RentServiceImpl implements RentService {
 		rentMapper.updateCancel(rentVO);
 		
 	}
+
+	@Override
+	public List<RentDTO> getBestCar() {
+		List<RentDTO> dtolist = rentMapper.selectBestCar().stream()
+				.map(vo -> modelMapper.map(vo, RentDTO.class))
+				.collect(Collectors.toList());
+		return dtolist;
+	}
+
+	@Override
+	public List<Map<Object, Object>> getDailyChart() {
+		List<Map<Object, Object>> maplist = rentMapper.selectDailyChart();
+		return maplist;
+	}
+
+
 
 }

@@ -2,6 +2,7 @@ package kr.co.ccrent;
 
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -45,12 +46,31 @@ public class RentMapperTest {
 		volist.forEach(vo -> System.out.println(vo));		
 	}
 	
-	@Test
+	// @Test
 	public void updateCancelTest() {
 		RentVO rentVO = RentVO.builder()
 				.rent_id(3)
 				.rent_state(1)
 				.build();
 		rentMapper.updateCancel(rentVO);
+	}
+	
+	// @Test
+	public void selectBestCarTest() {
+		List<RentVO> volist = rentMapper.selectBestCar();
+		volist.forEach(vo -> System.out.println(vo));
+	}
+	
+	//@Test
+	public void selectDailyChart() {
+		List<Map<Object, Object>> volist = rentMapper.selectDailyChart();
+		volist.forEach(vo -> System.out.println(vo));
+	}
+	
+	@Test
+	public void selectAllTest() {
+		List<RentVO> volist = rentMapper.selectAll("5");
+		volist.forEach(vo -> System.out.println(vo));
+		
 	}
 }

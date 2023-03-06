@@ -62,11 +62,26 @@
 	</div>
 	<div class="input-group">
 		<span class="input-group-text">핸드폰 번호</span>
-		<input type="text" class="form-control" name="rent_phone1" value="" required />
+		<input type="text" id="car_uphone" class="form-control" name="rent_phone1" value="" required />
 	</div>
+	<script>
+  $(document).on("keyup", "#car_uphone", function () {
+    $(this).val(
+      $(this)
+        .val()
+        .replace(/[^0-9]/g, "")
+        .replace(
+          /(^02|^0505|^1[0-9]{3}|^0[0-9]{2})([0-9]+)?([0-9]{4})$/,
+          "$1-$2-$3"
+        )
+        .replace("--", "-")
+    );
+  });
+</script>
+
 	<div class="input-group">
 		<span class="input-group-text">비밀번호</span>
-		<input type="text" class="form-control" name="rent_password" value="" required />
+		<input type="password" class="form-control" name="rent_password" value="" required />
 	</div>	
 	<div class="d-grid gap-2">
 		<button type="submit" class="btn btn-primary">예약 확인</button>
@@ -150,6 +165,17 @@ function rentCancel(rent_id){
 </tbody>
 </c:if>
 </table>
+
+<script>
+const result = "${result}"
+const msg = ""
+if(result){
+	if(result=="cancel"){
+		alert("예약이 취소되었습니다.")
+	}
+}
+</script>
+
 <!-- ================================================== -->		
 		</div> <!-- // #body_contents end -->
 	</div><!-- // #wrap end -->
