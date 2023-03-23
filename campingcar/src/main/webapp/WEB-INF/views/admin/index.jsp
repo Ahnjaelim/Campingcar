@@ -63,7 +63,7 @@
 		<c:forEach items="${bestcarlist }" var="dto" varStatus="status">
 		<tr<c:if test="${status.count==5 }"> class="borderless"</c:if>>
 			<th>${status.count }위</th>
-			<td class="text-start"><a href="car/read?car_regid=${dto.car.car_regid }&comp_id=0">[${dto.car.car_modelname }] ${dto.car.car_name }</a></td>
+			<td class="text-start"><a href="${contextPath }/admin/car/read?car_regid=${dto.car.car_regid }&comp_id=0">[${dto.car.car_modelname }] ${dto.car.car_name }</a></td>
 			<td>${dto.cnt }</td>
 		</tr>
 		</c:forEach>
@@ -86,7 +86,7 @@
 <div class="card">
 	<div class="card-header" style="position:relative;">
 		<p><i class="fa-solid fa-bars"></i> 최신 예약 목록</p>
-		<p style="position:absolute; right:17px; top:8px;"><a href="rent/list" style="color:#b4b4b4;">MORE <i class="fa-solid fa-caret-right"></i></a></p>
+		<p style="position:absolute; right:17px; top:8px;"><a href="${contextPath }/admin/rent/list" style="color:#b4b4b4;">MORE <i class="fa-solid fa-caret-right"></i></a></p>
 	</div>
 	<div class="card-body">
 		<table class="table table-bordered mb-0 table-hover center">
@@ -106,7 +106,7 @@
 		</thead>
 		<tbody>
 		<c:forEach items="${latestrentlist }" var="dto" varStatus="status">
-		<tr style="cursor:pointer;" onclick="location.href='rent/read?rent_id=${dto.rent_id}&listtype=list';">
+		<tr style="cursor:pointer;" onclick="location.href='${contextPath }/admin/rent/read?rent_id=${dto.rent_id}&listtype=list';">
 			<th>${dto.rent_id }</th>
 			<td>${dto.rent_name }</td>
 			<td>${dto.car.car_modelname } ${dto.car.car_name }</td>
